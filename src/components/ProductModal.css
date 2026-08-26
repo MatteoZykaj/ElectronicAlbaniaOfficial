@@ -1,0 +1,251 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(10px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal__box {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 24px;
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.07);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modal__close:hover {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+
+.modal__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+}
+
+.modal__img-wrap {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border-radius: 24px 0 0 24px;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.modal__placeholder span { font-size: 5rem; }
+.modal__placeholder p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.modal__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  color: #000;
+}
+
+.modal__info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modal__brand {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.modal__name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.modal__model {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.modal__model strong { color: rgba(255,255,255,0.7); }
+
+.modal__desc {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 0.75rem;
+}
+
+.modal__specs-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0.5rem;
+}
+
+.modal__specs ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modal__specs li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.modal__check {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.modal__stock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+}
+
+.modal__stock-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.modal__stock-dot.in { background: #4ade80; }
+.modal__stock-dot.out { background: #f87171; }
+
+.modal__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.modal__wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #25D366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal__wa:hover {
+  background: #1ebe5a;
+  transform: translateY(-2px);
+}
+
+.modal__email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.modal__email:hover {
+  border-color: rgba(255,255,255,0.4);
+  color: var(--white);
+}
+
+.modal__note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .modal__layout {
+    grid-template-columns: 1fr;
+  }
+  .modal__img-wrap {
+    border-radius: 24px 24px 0 0;
+    min-height: 200px;
+  }
+  .modal__info {
+    padding: 1.5rem;
+  }
+}

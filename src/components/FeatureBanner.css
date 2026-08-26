@@ -1,0 +1,104 @@
+/* ============================================
+   FEATURE BANNER — HP-inspired clean strip
+   ============================================ */
+
+.fbanner {
+  padding: 0 2rem;
+}
+
+.fbanner__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.fbanner__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.8rem 1.6rem;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.fbanner__item:last-child { border-right: none; }
+
+.fbanner__item::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+
+.fbanner__item:hover { background: rgba(255,255,255,0.03); }
+.fbanner__item:hover::before { transform: scaleX(1); }
+
+.fbanner__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.fbanner__body { min-width: 0; }
+
+.fbanner__title {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fbanner__desc {
+  font-size: 0.77rem;
+  color: rgba(255,255,255,0.35);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Reveal ── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-item.revealed { opacity: 1; transform: none; }
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .fbanner__container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .fbanner__item:nth-child(2) { border-right: none; }
+  .fbanner__item:nth-child(1),
+  .fbanner__item:nth-child(2) {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+}
+
+@media (max-width: 480px) {
+  .fbanner { padding: 0 1.5rem; }
+  .fbanner__container {
+    grid-template-columns: 1fr;
+  }
+  .fbanner__item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .fbanner__item:last-child { border-bottom: none; }
+}

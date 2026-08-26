@@ -1,0 +1,151 @@
+.solutions {
+    padding: 6rem 2rem;
+    background: var(--black);
+}
+
+.solutions__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solutions__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.solutions__label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.solutions__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.solutions__title span {
+    color: var(--accent);
+}
+
+.solutions__desc {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.solutions__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.sol-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.sol-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--sol-color);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.sol-card:hover {
+    border-color: var(--sol-color);
+    transform: translateY(-5px);
+}
+
+.sol-card:hover::after {
+    opacity: 1;
+}
+
+.sol-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sol-card__icon {
+    font-size: 2.5rem;
+}
+
+.sol-card__sub {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sol-color);
+    background: color-mix(in srgb, var(--sol-color) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sol-color) 25%, transparent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+}
+
+.sol-card__title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.sol-card__desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.sol-card__points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.sol-card__points li {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+}
+
+.sol-card__btn {
+    display: block;
+    text-align: center;
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--sol-color);
+    color: var(--sol-color);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sol-card__btn:hover {
+    background: var(--sol-color);
+    color: #000;
+}

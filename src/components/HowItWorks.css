@@ -1,0 +1,133 @@
+.hiw {
+  padding: 6rem 2rem;
+  background: #0d0d0d;
+}
+
+.hiw__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hiw__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hiw__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hiw__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.hiw__title span {
+  color: var(--accent);
+}
+
+.hiw__desc {
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.hiw__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 3.5rem;
+}
+
+.hiw__step {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.hiw__step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+}
+
+.hiw__step-num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(47,128,237,0.1);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.hiw__step-line {
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  margin: 0.5rem 0;
+  opacity: 0.3;
+}
+
+.hiw__step-body {
+  padding-bottom: 3rem;
+  flex: 1;
+}
+
+.hiw__step-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.hiw__step-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.hiw__step-desc {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.hiw__cta {
+  text-align: center;
+}
+
+.hiw__btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hiw__btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
